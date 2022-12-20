@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EEF75A4294B8F9D002CA05A /* Batch.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEF75A3294B8F9D002CA05A /* Batch.xcframework */; };
-		1EEF75B1294B9684002CA05A /* PianoAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEF75B0294B9684002CA05A /* PianoAnalytics.xcframework */; };
-		1EEF75B2294B9684002CA05A /* PianoAnalytics.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEF75B0294B9684002CA05A /* PianoAnalytics.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1EB162A829521D9C00B821CD /* InstantMock in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB162A729521D9C00B821CD /* InstantMock */; };
+		1EB162AB29521E3E00B821CD /* Batch in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB162AA29521E3E00B821CD /* Batch */; };
+		1EB162AE29521E6800B821CD /* PianoAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB162AD29521E6800B821CD /* PianoAnalytics */; };
 		OBJ_22 /* BatchPianoDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* BatchPianoDispatcher.swift */; };
 		OBJ_40 /* BatchPianoDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* BatchPianoDispatcherTests.swift */; };
 		OBJ_42 /* BatchPianoDispatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "batch-ios-piano-dispatcher::BatchPianoDispatcher::Product" /* BatchPianoDispatcher.framework */; };
@@ -24,20 +24,6 @@
 			remoteInfo = BatchPianoDispatcher;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1EEF75B3294B9684002CA05A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1EEF75B2294B9684002CA05A /* PianoAnalytics.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1EEF75A3294B8F9D002CA05A /* Batch.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Batch.xcframework; path = Carthage/Build/Batch.xcframework; sourceTree = "<group>"; };
@@ -54,8 +40,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				1EEF75B1294B9684002CA05A /* PianoAnalytics.xcframework in Frameworks */,
-				1EEF75A4294B8F9D002CA05A /* Batch.xcframework in Frameworks */,
+				1EB162A829521D9C00B821CD /* InstantMock in Frameworks */,
+				1EB162AE29521E6800B821CD /* PianoAnalytics in Frameworks */,
+				1EB162AB29521E3E00B821CD /* Batch in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +99,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -122,7 +109,6 @@
 				OBJ_14 /* Products */,
 				1EEF75A2294B8F9D002CA05A /* Frameworks */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -151,13 +137,17 @@
 			buildPhases = (
 				OBJ_21 /* Sources */,
 				OBJ_23 /* Frameworks */,
-				1EEF75B3294B9684002CA05A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = BatchPianoDispatcher;
+			packageProductDependencies = (
+				1EB162A729521D9C00B821CD /* InstantMock */,
+				1EB162AA29521E3E00B821CD /* Batch */,
+				1EB162AD29521E6800B821CD /* PianoAnalytics */,
+			);
 			productName = BatchPianoDispatcher;
 			productReference = "batch-ios-piano-dispatcher::BatchPianoDispatcher::Product" /* BatchPianoDispatcher.framework */;
 			productType = "com.apple.product-type.framework";
@@ -195,7 +185,12 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
+			packageReferences = (
+				1EB162A629521D9C00B821CD /* XCRemoteSwiftPackageReference "InstantMock" */,
+				1EB162A929521E3D00B821CD /* XCRemoteSwiftPackageReference "Batch-iOS-SDK" */,
+				1EB162AC29521E6800B821CD /* XCRemoteSwiftPackageReference "piano-analytics-apple" */,
+			);
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -327,6 +322,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -434,6 +430,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -483,6 +480,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1EB162A629521D9C00B821CD /* XCRemoteSwiftPackageReference "InstantMock" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pirishd/InstantMock";
+			requirement = {
+				kind = exactVersion;
+				version = 2.5.6;
+			};
+		};
+		1EB162A929521E3D00B821CD /* XCRemoteSwiftPackageReference "Batch-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BatchLabs/Batch-iOS-SDK.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.19.2;
+			};
+		};
+		1EB162AC29521E6800B821CD /* XCRemoteSwiftPackageReference "piano-analytics-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/at-internet/piano-analytics-apple";
+			requirement = {
+				kind = exactVersion;
+				version = 3.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1EB162A729521D9C00B821CD /* InstantMock */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EB162A629521D9C00B821CD /* XCRemoteSwiftPackageReference "InstantMock" */;
+			productName = InstantMock;
+		};
+		1EB162AA29521E3E00B821CD /* Batch */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EB162A929521E3D00B821CD /* XCRemoteSwiftPackageReference "Batch-iOS-SDK" */;
+			productName = Batch;
+		};
+		1EB162AD29521E6800B821CD /* PianoAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EB162AC29521E6800B821CD /* XCRemoteSwiftPackageReference "piano-analytics-apple" */;
+			productName = PianoAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = OBJ_1 /* Project object */;
 }
