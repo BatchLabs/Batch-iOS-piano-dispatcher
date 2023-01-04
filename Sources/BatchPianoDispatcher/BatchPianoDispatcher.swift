@@ -64,7 +64,7 @@ protocol BatchPianoEventSenderDelegate {
 /// If you want to dispatch as custom event, please see ``BatchPianoDispatcher/BatchPianoDispatcher/enableCustomEvents``.
 /// - Note: If you enable custom events, you need to declare them in your Piano Data Model.
 @objc
-public class BatchPianoDispatcher : NSObject, BatchEventDispatcherDelegate, BatchPianoEventSenderDelegate{
+public class BatchPianoDispatcher : NSObject, BatchEventDispatcherDelegate, BatchPianoEventSenderDelegate {
     
     /// Singleton instance
     public static let instance = BatchPianoDispatcher()
@@ -72,10 +72,10 @@ public class BatchPianoDispatcher : NSObject, BatchEventDispatcherDelegate, Batc
     /// Whether Batch should send custom events (default: false)
     ///
     /// - Note: Custom events must be defined in your Piano Data Model
-    public var enableCustomEvents: Bool = false;
+    public var enableCustomEvents: Bool = false
     
     /// Whether Batch should handle UTM tags in campaign's deeplink and custom payload. (default = true)
-    public var enableUTMTracking: Bool = true;
+    public var enableUTMTracking: Bool = true
     
     /// Sender delegate to make mock easier
     var pianoSenderDelegate: BatchPianoEventSenderDelegate? = nil
