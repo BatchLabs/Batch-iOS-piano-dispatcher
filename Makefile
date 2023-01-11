@@ -14,5 +14,10 @@ framework: clean
 test: clean
 	set -o pipefail && xcodebuild test -project $(PROJECT) -scheme BatchPianoDispatcher -destination $(SIMULATOR) | xcpretty
 
+format:
+	bash Scripts/format.sh
+
+format-check:
+	bash Scripts/format-check.sh
 
 .PHONY: test
