@@ -70,6 +70,9 @@ public class BatchPianoDispatcher: NSObject, BatchEventDispatcherDelegate, Batch
     /// - Note: Custom events must be defined in your Piano Data Model
     public var enableCustomEvents: Bool = false
 
+    /// Whether Batch should send On-Site Ads events (default: true)
+    public var enableOnSiteAdsEvents: Bool = true
+
     /// Whether Batch should handle UTM tags in campaign's deeplink and custom payload. (default = true)
     public var enableUTMTracking: Bool = true
 
@@ -108,7 +111,7 @@ public class BatchPianoDispatcher: NSObject, BatchEventDispatcherDelegate, Batch
     ///   - payload: The associated payload of the event
     public func dispatchEvent(with type: BatchEventDispatcherType, payload: BatchEventDispatcherPayload) {
         // Dispatch onSiteAds event
-        if type.shouldBeDispatchedAsOnSiteAd {
+        if enableOnSiteAdsEvents && type.shouldBeDispatchedAsOnSiteAd {
             if let onSiteAdsEvent = buildPianoOnSiteAdsEvent(type: type, payload: payload) {
                 pianoSenderDelegate?.sendEvent(onSiteAdsEvent)
             }
