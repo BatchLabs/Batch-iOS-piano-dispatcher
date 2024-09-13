@@ -1,7 +1,7 @@
 all: framework
 
 PROJECT=BatchPianoDispatcher.xcodeproj
-SIMULATOR='platform=iOS Simulator,name=iPhone 14'
+SIMULATOR='platform=iOS Simulator,name=iPhone 15'
 DERIVED_DATA=$(CURDIR)/DerivedData
 
 clean:
