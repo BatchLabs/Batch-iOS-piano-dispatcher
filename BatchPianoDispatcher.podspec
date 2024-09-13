@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Batch.com' => 'support@batch.com' }
   s.source           = { :git => 'https://github.com/BatchLabs/Batch-iOS-piano-dispatcher.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
   s.platforms = {
     "ios" => "11.0"
   }
