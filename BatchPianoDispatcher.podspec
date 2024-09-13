@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'BatchPianoDispatcher'
-  s.version          = '1.0.1'
+  s.version          = '2.0.0'
   s.summary          = 'Batch.com Events Dispatcher Piano implementation.'
 
   s.description      = <<-DESC
