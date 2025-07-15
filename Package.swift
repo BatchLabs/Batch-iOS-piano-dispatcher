@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "BatchPianoDispatcher",
+    platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -14,7 +15,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/BatchLabs/Batch-iOS-SDK","1.19.0"..."99.0.0"),
+        .package(url: "https://github.com/BatchLabs/Batch-iOS-SDK","3.0.1"..."99.0.0"),
         .package(url: "https://github.com/at-internet/piano-analytics-apple", from: "3.0.0"),
         .package(url: "https://github.com/pirishd/InstantMock", .upToNextMajor(from: "2.0.0")),
     ],
@@ -23,7 +24,8 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "BatchPianoDispatcher",
-            dependencies: [.product(name: "Batch", package: "Batch-iOS-SDK"), .product(name: "PianoAnalytics", package: "piano-analytics-apple")]),
+            dependencies: [.product(name: "Batch", package: "Batch-iOS-SDK"),
+                           .product(name: "PianoAnalytics", package: "piano-analytics-apple")]),
         .testTarget(
             name: "BatchPianoDispatcherTests",
             dependencies: ["BatchPianoDispatcher", "InstantMock"]),
