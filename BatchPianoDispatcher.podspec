@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'BatchPianoDispatcher'
-  s.version          = '2.0.0'
+  s.version          = '3.0.0'
   s.summary          = 'Batch.com Events Dispatcher Piano implementation.'
 
   s.description      = <<-DESC
@@ -12,9 +12,9 @@ Pod::Spec.new do |s|
   s.author           = { 'Batch.com' => 'support@batch.com' }
   s.source           = { :git => 'https://github.com/BatchLabs/Batch-iOS-piano-dispatcher.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '15.0'
   s.platforms = {
-    "ios" => "11.0"
+    "ios" => "15.0",
   }
   s.swift_version = '5.0'
 

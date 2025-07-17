@@ -16,7 +16,7 @@ You can find a guide explaining how to use the reported events [here](https://he
 
 # Requirements
  - Xcode 14
- - iOS 12+
+ - iOS 15+
  - Batch 1.19+
  - Piano 3.0+
 
