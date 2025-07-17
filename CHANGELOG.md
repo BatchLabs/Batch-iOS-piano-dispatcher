@@ -1,6 +1,10 @@
 CHANGELOG
 =========
+3.0.0
+-----
 
+ * Batch Piano Dispatcher requires now iOS 15.0 or higher
+   
 2.0.0
 -----
 

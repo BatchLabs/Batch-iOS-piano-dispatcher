@@ -111,7 +111,7 @@ public class BatchPianoDispatcher: NSObject, BatchEventDispatcherDelegate, Batch
     ///   - payload: The associated payload of the event
     public func dispatchEvent(with type: BatchEventDispatcherType, payload: BatchEventDispatcherPayload) {
         // Dispatch onSiteAds event
-        if enableOnSiteAdsEvents && type.shouldBeDispatchedAsOnSiteAd {
+        if enableOnSiteAdsEvents, type.shouldBeDispatchedAsOnSiteAd {
             if let onSiteAdsEvent = buildPianoOnSiteAdsEvent(type: type, payload: payload) {
                 pianoSenderDelegate?.sendEvent(onSiteAdsEvent)
             }
